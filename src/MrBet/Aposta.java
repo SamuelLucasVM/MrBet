@@ -16,11 +16,12 @@ public class Aposta {
 	 * Construtor de aposta, que recebe time, campeonato, colocação e valor,
 	 * a verificação de validade dos parâmetros ocorre previamente na classe 
 	 * de sistema, assim sem a necessidade de testar novamente no construtor.
-	 * @param time - Time em que está se apostando
-	 * @param campeonato - Campeonato em que está o time que esta apostando
-	 * @param colocacao - Colocação na qual o apostador aposta em que o time ficará
-	 * @param valor - Valor que o apostador colocou em sua aposta
+	 * @param time Time em que está se apostando
+	 * @param campeonato Campeonato em que está o time que esta apostando
+	 * @param colocacao Colocação na qual o apostador aposta em que o time ficará
+	 * @param valor Valor que o apostador colocou em sua aposta
 	 */
+	
 	public Aposta(Time time, Campeonato campeonato, int colocacao, double valor) {
 		this.time = time;
 		this.campeonato = campeonato;
@@ -29,13 +30,24 @@ public class Aposta {
 	}
 	
 	/**
-	 * ToString que retorna 
+	 * Método que retorna as informações formatadas de nome do time e campeonato
+	 * da aposta além da colocação e valor apostado.
+	 * @return response String formatada 
 	 */
+	
 	@Override
 	public String toString() {
 		String response = time.toString() + "\n" + campeonato.getNome() + "\n" + colocacao + "/" + campeonato.getQtdeParticipantes() + "\n" + "R$ " + valor;
 		return response;
 	}
+	
+	/**
+	 * Método que analisa se uma aposta é igual à outra, retornando false para 
+	 * quando o objeto passado é nulo ou de classe diferente de aposta ou quando 
+	 * as informações das duas apostas forem diferentes por completo e retornando 
+	 * true pro contrario.
+	 * @return boolean indicando se o objeto passado é igual ou não ao indicado
+	 */
 	
 	@Override
 	public boolean equals(Object obj) {
