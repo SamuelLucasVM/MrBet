@@ -1,2 +1,1 @@
-# Mr.Beat
-# MrBet
+# Mr.Bet
